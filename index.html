@@ -2,14 +2,16 @@
 <html>
 <head>
     <title>Aleja Mor</title>
-    <link rel="stylesheet" type="text/css" href="Style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="container">
         <img src="FEID.png" alt="Imagen de fondo">
         <!-- Botones laterales -->
-        <button class="button-left" onclick="mostrarMensaje('eres mi novia')">Eres mi novia</button>
-        <button class="button-right" onclick="mostrarMensaje('invitado')">Invitado</button>
+        <div class="botones-container">
+            <button class="button-left" onclick="mostrarMensaje('eres mi novia')">Eres mi novia</button>
+            <button class="button-right" onclick="mostrarMensaje('invitado')">Invitado</button>
+        </div>
 
         <!-- Audio -->
         <audio id="music" autoplay loop>
