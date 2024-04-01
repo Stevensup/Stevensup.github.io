@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aleja Mor</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <link rel="icon" href="icono.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <img src="FEID.png" alt="Imagen de fondo">
+        <!-- Botones laterales -->
+        <div class="botones-container">
+            <button class="button-left" onclick="abrirModal()">Eres mi novia</button>
+            <button class="button-right" onclick="mostrarImagen('invitado.png')">Invitado</button>
+        </div>
+        <p class="texto">&#127874; Cumple AleMor</p>
+        <div id="contador"></div>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <div id="modalContent">
+                    <button id="nextButton">Presiona Aqui!</button>
+                </div>
+                <img id="modalImagen" src="" alt="Imagen del modal">
+                <p id="modalTexto"></p>
+            </div>
+        </div>
+
+        <!-- Audio -->
+        <audio id="music" autoplay loop>
+            <source src="musica.mp3" type="audio/mpeg">
+            Tu navegador no admite audio HTML5.
+        </audio>       
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Derechos reserv@dos Developer Steven Useche</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
