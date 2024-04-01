@@ -89,10 +89,20 @@ img {
     bottom: 20px; /* Espacio desde la parte inferior */
     left: 0; /* Alinear a la izquierda del contenedor */
     right: 0; /* Alinear a la derecha del contenedor */
+    display: flex; /* Mostrar como flexbox */
+    justify-content: space-around; /* Distribuir los elementos equitativamente */
+    align-items: center; /* Alinear verticalmente al centro */
 }
 
 .controles button {
-    margin: 0 10px; /* Margen entre los botones */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.controles button:hover {
+    color: #007bff; /* Cambia el color al hacer hover */
 }
 
 /* Estilos para la barra de progreso */
@@ -109,4 +119,26 @@ progress {
     height: 24px;
     fill: currentColor;
     margin: 0 5px;
+}
+
+
+#contador {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#contador span {
+    margin-right: 10px;
+}
+
+#contador .valor {
+    font-weight: bold;
+    font-size: 36px;
 }
