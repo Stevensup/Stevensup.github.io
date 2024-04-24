@@ -18,16 +18,14 @@ function actualizarContador() {
     );
     const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-    // Mostrar el contador en el elemento HTML
-    const contadorElement = document.getElementById("contador");
-    contadorElement.innerHTML = `
-    <span>Faltan:</span>
-    <span class="valor">${dias}</span> días,
-    <span class="valor">${horas}</span> horas,
-    <span class="valor">${minutos}</span> minutos,
-    <span class="valor">${segundos}</span> segundos
+      // Mostrar el contador en el elemento HTML
+  const contadorElement = document.getElementById("contador");
+  contadorElement.innerHTML = `
+    <span>FELIZ CUMPLEAÑOS</span>
+    
 `;
 }
+
 
 // Actualizar el contador cada segundo
 setInterval(actualizarContador, 1000);
