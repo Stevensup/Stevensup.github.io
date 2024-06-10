@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Aleja Mor</title>
-    <link rel="stylesheet" type="text/css" href="Style.css">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="icono.png" type="image/png">
 </head>
 <body>
-    <div class="container">
-        <img src="FEID.png" alt="Imagen de fondo">
-        <!-- Botones laterales -->
-        <div class="botones-container">
-            <button class="button-left" onclick="abrirModal()">Eres mi novia</button>
-            <button class="button-right" onclick="mostrarImagen('invitado.png')">Invitado</button>
-        </div>
-        <p class="texto">&#127874; Cumple AleMor</p>
-        <div id="contador"></div>
-
-        <!-- Modal -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="cerrarModal()">&times;</span>
-                <div id="modalContent">
-                    <button id="nextButton">Presiona Aqui!</button>
-                </div>
-                <img id="modalImagen" src="" alt="Imagen del modal">
-                <p id="modalTexto"></p>
-            </div>
-        </div>
-
-        <!-- Audio -->
-        <audio id="music" autoplay loop>
-            <source src="musica.mp3" type="audio/mpeg">
-            Tu navegador no admite audio HTML5.
-        </audio>       
+    <div class="container" id="nombreContainer">
+        <h1>Bienvenido al Choice</h1>
+        <form id="nombreForm" onsubmit="iniciarQuiz(event)">
+            <label for="nombreInput">Ingresa tu nombre:</label>
+            <input type="text" id="nombreInput" required>
+            <label for="velocidadSelect">Selecciona la velocidad:</label>
+            <select id="velocidadSelect">
+                <option value="15000">15 segundos por pregunta</option>
+                <option value="30000" selected>30 segundos por pregunta</option>
+                <option value="45000">45 segundos por pregunta</option>
+            </select>
+            <br>
+            <button type="submit">Comenzar</button>
+        </form>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>Derechos reserv@dos Developer Steven Useche</p>
-    </footer>
+    <div class="container" id="quizContainer" style="display: none;">
+        <h2 id="pregunta"></h2>
+        <h3 id="contadorTiempo"></h3>
+        <form id="quizForm" onsubmit="comprobarRespuesta(event)">
+            <div id="opciones"></div>
+            <button type="submit">Siguiente</button>
+        </form>
+    </div>
 
-    <!-- Scripts -->
+    <div class="container" id="resultado" style="display: none;">
+        <h1>Estadísticas Finales</h1>
+        <h3 id="tiempo"></h3>
+        <div id="resumen"></div>
+        <h2 id="puntuacion"></h2>
+        <button onclick="reiniciarQuiz()">Volver a Empezar</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
