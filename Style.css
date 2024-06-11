@@ -1,13 +1,16 @@
+/* Estilos base */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('celula.jpeg');
-    background-size: 100% 100%; /* Ajustar la imagen para cubrir todo el fondo */
+    background-color: #000000;
+    /* background-image: url('celula.jpeg'); */
+    background-size: cover; /* Ajustar la imagen para cubrir todo el fondo */
     background-repeat: no-repeat;
     background-attachment: fixed; /* Fijar la imagen de fondo para que no se desplace */
     background-position: center; /* Centrar la imagen en el fondo */
 }
+
 
 .container {
     max-width: 600px;
