@@ -121,18 +121,23 @@ var preguntas = [
   },
 ];
 
-
 var nombreUsuario = "";
 var preguntaActual = 0;
 var puntuacion = 0;
 var respuestasUsuario = [];
-var tiempoPorPregunta = 30000; // tiempo por defecto: 30 segundos
+var tiempoPorPregunta = 30000; 
 var temporizador;
 var startTime;
 
 
 function iniciarQuiz(event) {
     event.preventDefault();
+
+    var velocidadSelect = document.getElementById("velocidadSelect");
+    if (velocidadSelect.value == "0") {
+        alert("Por favor, selecciona una velocidad.");
+        return;
+    }
     var nombreInput = document.getElementById("nombreInput");
     nombreUsuario = nombreInput.value.trim();
     var velocidadSelect = document.getElementById("velocidadSelect");
@@ -148,9 +153,7 @@ function iniciarQuiz(event) {
 
 function mostrarPregunta() {
     var pregunta = preguntas[preguntaActual];
-    document.getElementById("pregunta").textContent = "Pregunta " + (preguntaActual + 1) + " de " + preguntas.length + ": " + pregunta.pregunta;
-    document.getElementById("contadorTiempo").textContent = "Tiempo seleccionado: " + (tiempoPorPregunta / 1000) + " segundos";
-
+    document.getElementById("pregunta").innerHTML = "Pregunta " + (preguntaActual + 1) + " de " + preguntas.length + ":<br><p id='textoPregunta'>" + pregunta.pregunta + "</p>";
     var opciones = document.getElementById("opciones");
     opciones.innerHTML = "";
     for (var i = 0; i < pregunta.opciones.length; i++) {
@@ -272,7 +275,7 @@ function finalizarQuiz() {
                 respuestasUsuario[i].respuestaUsuario ==
                 respuestasUsuario[i].respuestaCorrecta
             ) {
-                item.style.color = "green";
+                item.style.color = "yellow";
             } else {
                 item.style.color = "red";
             }
